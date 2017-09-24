@@ -1,0 +1,31 @@
+<%= form_with model: @subscriber, url: welcome_index_path, local: true do |form| %>
+ 
+  <% if @subscriber.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@subscriber.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @subscriber.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
