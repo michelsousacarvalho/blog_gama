@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
     
     if @subscriber.save
+      ApplicationMailer.notifier_register(@subscriber).deliver_now
       redirect_back(fallback_location: root_path)
     else
       render "index"

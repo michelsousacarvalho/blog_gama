@@ -3,8 +3,7 @@
   <% if @subscriber.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@subscriber.errors.count, "error") %> prohibited
-        this article from being saved:
+        <%= pluralize(@subscriber.errors.count, "error") %> ocorreu ao salva subscribe:
       </h2>
       <ul>
         <% @subscriber.errors.full_messages.each do |msg| %>
