@@ -24,6 +24,9 @@ class WelcomeController < ApplicationController
     end
   end
   
+  def sobre
+    @subscriber = Subscriber.new
+  end
   
   private 
     def subscriber_params

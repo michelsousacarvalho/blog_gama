@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <!-- chama a folha de estilos css -->
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+
+        <script src="js/jquery-3.2.1.min.js"></script>        
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Custom styles for this template -->
+        <link href="css/clean-blog.min.css" rel="stylesheet">
+
+        <title> AppPromoter </title>
+    </head>
+
+    <body>
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <img src="/assets/logoap.png">
+                <a class="navbar-brand" href="index.html"> AppPromoter </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <!-- <a class="nav-link" href="sobre.html">Sobre</a> -->
+                            </li>
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Procurar" aria-label="Procurar">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+                    </form>
+                    </div>
+            </div>
+        </nav>
+
+        <!-- Cabeçalho, introdução -->
+        <header class="masthead" style="background-image: url('/assets/head3.png')">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h1> AppPromoter </h1>
+                            <span class="subheading"> O futuro do seu app em boas mãos </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Corpo -->
+        <div class="container">
+            <div class="row">
+                <div role="main" class="col-md-8">
+                    <h3> Quem somos? </h3>
+                    <p> A App Promoter é uma ferramenta de otimização mobile, através de SEO (Search Engine Optimization) , análise de concorrência, ASO (App Optimisation) e outras soluções para aumentar o número de downloads orgânicos do seu APP.
+
+                    Nossa missão é trazer inteligência de marketing ao seu aplicativo, dando maior visibilidade e entendimento do seu produto ao cliente final</p><br>
+
+                    <h3> Benefício </h3>
+                    <p> - Melhorar o rankeamento no buscador em lojas mobile </p>
+                    <p> - Aumentar downloads orgânicos</p>
+                    <p> - Maior visibilidade para sua solução</p>
+                    <p> - Desenvolvimento de inteligência de marketing</p>
+                    <p> - Análise de concorrentes</p>
+                    <p> - Informações relacionadas ao segmento do seu produto</p>
+                </div>
+                               
+                <aside role="complementary" class="col-md-4">
+                <!-- inscrever -->
+                <div class="col-md-12">
+                    <div class="signup-header wow fadeInUp">
+                        <h3 class="form-title text-center">Quer saber mais? Inscreva-se!</h3>
+						<%= form_with model: @subscriber, url: welcome_index_path, local: true do |form| %>
+
+						  <% if @subscriber.errors.any? %>
+						    <div id="error_explanation">
+						      <h2>
+						        <%= pluralize(@subscriber.errors.count, "error") %> ocorreu ao salva subscribe:
+						      </h2>
+						      <ul>
+						        <% @subscriber.errors.full_messages.each do |msg| %>
+						          <li><%= msg %></li>
+						        <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
+
+
+                           <div class="form-group">
+								<%= form.text_field :name, class: 'form-control input-lg', placeholder: 'Nome', 										required:true %>
+							</div>
+							<div class="form-group">
+						   	 	<%= form.text_field :email, class: 'form-control input-lg', placeholder: 'Email', 										required:true %>
+							</div>
+							<div class="form-group last">
+						    	<%= form.submit 'CADASTRAR', class: 'btn btn-warning btn-block btn-lg' %>
+							</div> 
+						<% end %>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <hr>
+
+		<!-- Rodapé -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">Copyright &copy; AppPromoter 2017 </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/popper/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/clean-blog.min.js"></script>	
+    </body>
+</html>
