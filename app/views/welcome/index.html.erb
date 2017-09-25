@@ -118,7 +118,36 @@
                     <div class="col-md-12">
                         <div class="signup-header wow fadeInUp">
                             <h3 class="form-title text-center">Quer saber mais? Inscreva-se!</h3>
-                            <form class="form-header" action="../landingPage/obrigado.html" role="form" method="POST" id="#">
+							
+							<%= form_with model: @subscriber, url: welcome_index_path, local: true do |form| %>
+ 
+							  <% if @subscriber.errors.any? %>
+							    <div id="error_explanation">
+							      <h2>
+							        <%= pluralize(@subscriber.errors.count, "error") %> ocorreu ao salva subscribe:
+							      </h2>
+							      <ul>
+							        <% @subscriber.errors.full_messages.each do |msg| %>
+							          <li><%= msg %></li>
+							        <% end %>
+							      </ul>
+							    </div>
+							  <% end %>
+ 
+
+                               <div class="form-group">
+									<%= form.text_field :name, class: 'form-control input-lg', placeholder: 'Nome', 										required:true %>
+								</div>
+								<div class="form-group">
+							   	 	<%= form.text_field :email, class: 'form-control input-lg', placeholder: 'Email', 										required:true %>
+								</div>
+								<div class="form-group last">
+							    	<%= form.submit 'CADASTRAR', class: 'btn btn-warning btn-block btn-lg' %>
+								</div> 
+							<% end %>
+
+							
+                            <!-- <form class="form-header" action="../landingPage/obrigado.html" role="form" method="POST" id="#">
                                 <div class="form-group">
                                     <input class="form-control input-lg" name="MERGE1" id="name" type="text" placeholder="Nome" required>
                                 </div>
@@ -127,7 +156,7 @@
                                 </div>
                                 <div class="form-group last">
                                     <input type="submit" class="btn btn-warning btn-block btn-lg" value="CADASTRAR">
-                                </div>
+                                </div> -->
                                 <p class="privacy text-center">Não iremos compartilhar seu email.</p>
                                
 
