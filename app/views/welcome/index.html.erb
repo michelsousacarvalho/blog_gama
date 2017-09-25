@@ -88,24 +88,23 @@
             <div class="row">
                 <div role="main" class="col-md-8">
                     <div class="post-preview">
-                        <p>O blog App Promoter traz novidades e notícias da área de tecnologia mobile e inovação. Conheça nossa ferramenta de otimização e cresça organicamente </p><br><br>
+						<h1>Bem vindo ao Blog da App Promoter. <h1>
+						<br><br>
+                        <h3>   Traremos novidades e insights da área de Mobile Tech e Inovação.   Conheça nossa ferramenta 								de ASO e cresça no ranking orgânico </h3>
+						<br><br>
 						
 					    <% @articles.each do |article| %>
-							<h2 class="post-title"> <%= article.title %> </h2>
+							<h1 class="post-title"> <%= article.title %> </h1>
 							<p class="post-subtitle"><%= article.text.html_safe %> </p>
+	                        <p class="post-meta">
+								Postado por AppPromoter em <%= article.created_at.strftime("%d/%m/%Y %H:%M")%> </p>
+							
 						    <hr>
 					    <% end %>
 						
 
-                        <a href="post.html">
-                            <h2 class="post-title"> TITULO POST </h2>
-                            <p class="post-subtitle"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla felis quis nisi pellentesque condimentum. Morbi metus tortor, finibus et magna eu, placerat gravida ligula. Mauris faucibus quam in fringilla porttitor. Nulla dignissim ante risus, a condimentum enim consequat vel. Pellentesque enim dolor, eleifend in efficitur nec, tempus ut urna. Praesent eget nisl justo. Quisque leo sapien, fringilla ac ullamcorper id, tempus id lorem. In quis varius justo. Nunc pharetra magna nec orci laoreet vehicula a in augue. Praesent vel erat auctor, blandit velit non, pulvinar dui. Suspendisse bibendum neque purus. Proin vestibulum dolor ut dui eleifend pretium.
-
-                            Donec ut sapien odio. Nunc at orci sodales neque posuere semper at eget arcu. Nam erat massa, consequat nec vestibulum ut, gravida in mauris. Sed odio diam, mollis quis nibh quis, iaculis convallis tellus. Phasellus eget placerat libero. Sed fermentum dictum luctus. Maecenas et nisi nisi. </p>
-                        </a>
-                        <p class="post-meta">Postado por 
-                            <a href="#">Teste</a>
-                            em September 24, 2017</p>
+                 
+                        
                     </div>
                                
                     <!-- Pager -->
