@@ -2,6 +2,8 @@ class WelcomeController < ApplicationController
   def index
     @articles = Article.all
     @subscriber = Subscriber.new
+    
+    
   end
   
   def new
@@ -12,6 +14,7 @@ class WelcomeController < ApplicationController
   def create
     @articles = Article.all
     @subscriber = Subscriber.new(subscriber_params)
+    @subscriber.ip = request.remote_ip.to_s
     
     if @subscriber.save
       ApplicationMailer.notifier_register(@subscriber).deliver_now
