@@ -92,7 +92,7 @@
 						
 					    <% @articles.each do |article| %>
 							<h2 class="post-title"> <%= article.title %> </h2>
-							<p class="post-subtitle"><%= article.text %> </p>
+							<p class="post-subtitle"><%= article.text.html_safe %> </p>
 						    <hr>
 					    <% end %>
 						
