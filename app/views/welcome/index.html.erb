@@ -1,12 +1,12 @@
 
-<h1>Blog</h1>
- 
+<!--<h1>Blog</h1>
+
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
   </tr>
- 
+
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
@@ -17,4 +17,164 @@
 
 
 
-<%= render 'form' %>
+<%= render 'form' %> -->
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		
+        <!-- <link rel="stylesheet" type="text/css" href="app/assets/css/bootstrap.min.css"> -->
+
+        <!-- chama a folha de estilos css -->
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+
+        <script src="assets/js/jquery-3.2.1.min.js"></script>        
+        <script src="assets/js/bootstrap.min.js"></script>
+
+        <!-- Custom fonts for this template -->
+        <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Custom styles for this template -->
+        <link href="assets/css/clean-blog.min.css" rel="stylesheet">
+
+        <title> AppPromoter </title>
+    </head>
+
+    <body>
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <img src="logoap.png">
+                <a class="navbar-brand" href="index.html"> AppPromoter </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fa fa-bars"></i> </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sobre.html">Sobre</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Procurar" aria-label="Procurar">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+                    </form>
+                    </div>
+            </div>
+        </nav>
+
+        <!-- Cabeçalho, introdução -->
+        <header class="masthead" style="background-image: url('/assets/head.png')">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h1> AppPromoter </h1>
+                            <span class="subheading"> O futuro do seu app em boas mãos </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Corpo -->
+        <div class="container">
+            <div class="row">
+                <div role="main" class="col-md-8">
+                    <div class="post-preview">
+                        <p>O blog App Promoter traz novidades e notícias da área de tecnologia mobile e inovação. Conheça nossa ferramenta de otimização e cresça organicamente </p><br><br>
+						
+					    <% @articles.each do |article| %>
+							<h2 class="post-title"> <%= article.title %> </h2>
+							<p class="post-subtitle"><%= article.text %> </p>
+						    <hr>
+					    <% end %>
+						
+
+                        <a href="post.html">
+                            <h2 class="post-title"> TITULO POST </h2>
+                            <p class="post-subtitle"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla felis quis nisi pellentesque condimentum. Morbi metus tortor, finibus et magna eu, placerat gravida ligula. Mauris faucibus quam in fringilla porttitor. Nulla dignissim ante risus, a condimentum enim consequat vel. Pellentesque enim dolor, eleifend in efficitur nec, tempus ut urna. Praesent eget nisl justo. Quisque leo sapien, fringilla ac ullamcorper id, tempus id lorem. In quis varius justo. Nunc pharetra magna nec orci laoreet vehicula a in augue. Praesent vel erat auctor, blandit velit non, pulvinar dui. Suspendisse bibendum neque purus. Proin vestibulum dolor ut dui eleifend pretium.
+
+                            Donec ut sapien odio. Nunc at orci sodales neque posuere semper at eget arcu. Nam erat massa, consequat nec vestibulum ut, gravida in mauris. Sed odio diam, mollis quis nibh quis, iaculis convallis tellus. Phasellus eget placerat libero. Sed fermentum dictum luctus. Maecenas et nisi nisi. </p>
+                        </a>
+                        <p class="post-meta">Postado por 
+                            <a href="#">Teste</a>
+                            em September 24, 2017</p>
+                    </div>
+                               
+                    <!-- Pager -->
+                    <div class="clearfix">
+                        <a class="btn btn-secondary float-right" href="#">Posts antigos &rarr;</a>
+                    </div>
+                </div>
+                <aside role="complementary" class="col-md-4">
+                    <!-- inscrever -->
+                    <div class="col-md-12">
+                        <div class="signup-header wow fadeInUp">
+                            <h3 class="form-title text-center">Quer saber mais? Inscreva-se!</h3>
+                            <form class="form-header" action="../landingPage/obrigado.html" role="form" method="POST" id="#">
+                                <div class="form-group">
+                                    <input class="form-control input-lg" name="MERGE1" id="name" type="text" placeholder="Nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-lg" name="MERGE0" id="email" type="email" placeholder="Email" required>
+                                </div>
+                                <div class="form-group last">
+                                    <input type="submit" class="btn btn-warning btn-block btn-lg" value="CADASTRAR">
+                                </div>
+                                <p class="privacy text-center">Não iremos compartilhar seu email.</p>
+                               
+
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <hr>
+
+		<!-- Rodapé -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">Copyright &copy; AppPromoter 2017 </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/popper/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="assets/js/clean-blog.min.js"></script>	
+    </body>
+</html>
