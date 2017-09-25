@@ -96,7 +96,7 @@
 							<h1 class="post-title"> <%= article.title %> </h1>
 							<p class="post-subtitle"><%= article.text.html_safe %> </p>
 	                        <p class="post-meta">
-								Postado por AppPromoter em <%= article.created_at.strftime("%d/%m/%Y %H:%M")%> </p>
+								Postado por AppPromoter em <%= article.created_at.localtime.strftime("%d/%m/%Y %H:%M")%> </p>
 							
 						    <hr>
 					    <% end %>
